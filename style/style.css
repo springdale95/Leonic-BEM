@@ -73,6 +73,12 @@ body {
     color: var(--gray-text);
 }
 
+.time-text {
+    font-weight: 400;
+    font-size: 10px;
+    color: var(--gray-text);
+}
+
 /* Ссылка */
 
 .default-link {
@@ -178,6 +184,7 @@ body {
     align-content: center;
     gap: 27px;
     padding: 60px 25px;
+    max-width: 270px;
 }
 
 .services-card__body {
@@ -197,6 +204,7 @@ body {
 .services-card:hover {
     background-color: var(--base-color);
     cursor: pointer;
+    transition: background-color var(--transition-duration);
 }
 
 .services-card:hover .services-card__img {
@@ -208,6 +216,54 @@ body {
 }
 
 .services-card:hover .services-card__paragraph {
+    color: var(--white);
+}
+
+/*Articles карточка*/
+
+.articles-card {
+    display: flex;
+    border: 1px solid var(--base-color-border);
+    border-radius: 5px;
+    max-width: 570px;
+    gap: 30px;
+}
+
+.articles-card__img {
+    width: 180px;
+    height: 180px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.articles-card__body {
+    padding-top: 15px;
+}
+
+.articles-card__title {
+    padding-bottom: 15px;
+}
+
+.articles-card__paragraph {
+    line-height: 21px;
+    max-width: 210px;
+}
+
+.articles-card:hover {
+    background-color: var(--base-color);
+    cursor: pointer;
+    transition: background-color var(--transition-duration);
+}
+
+.articles-card:hover .articles-card__time {
+    color: var(--white);
+}
+
+.articles-card:hover .articles-card__title {
+    color: var(--white);
+}
+
+.articles-card:hover .articles-card__paragraph {
     color: var(--white);
 }
 
@@ -243,6 +299,30 @@ body {
 .services-card__paragraph {
     font-size: 12px;
     line-height: 18px;
+}
+
+/* Articles карточка*/
+
+.articles-card {
+    max-width: 290px;
+    gap: 15px;
+}
+
+.articles-card__img {
+    min-width: 85px;
+    min-height: 190px;
+}
+
+.articles-card__body {
+    padding: 30px 30px 30px 0;
+}
+
+.articles-card__title {
+    padding-bottom: 0px;
+}
+
+.articles-card__paragraph {
+    min-width: 160px;
 }
 
 }
