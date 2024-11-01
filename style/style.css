@@ -1,6 +1,7 @@
 @import url('./normalize.css');
 @import url('./fonts.css');
 
+
 :root {
     --black: #1C1C1C;
     --white: #FFFFFF;
@@ -10,6 +11,8 @@
     --base-color-gray: #C4C4C4;
     --base-color-border: #E4E4E4;
     --gray-text: #787878;
+    --clients-card-border-outside: rgb(107, 107, 107, 0.3);
+    --clients-card-border-inside: rgb(218, 218, 218, 0.6);
     --transition-duration: .3s;
 }
 
@@ -61,6 +64,12 @@ body {
     list-style: none;
 }
 
+.burger-menu {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+
 .card-title {
     font-weight: 600;
     font-size: 20px;
@@ -78,6 +87,42 @@ body {
     font-size: 10px;
     color: var(--gray-text);
 }
+
+.person-card {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+}
+
+.name-and-status {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    row-gap: 5px;
+}
+
+.min-card-title {
+    font-weight: 600;
+    font-size: 17px;
+    color: var(--black);
+}
+
+.min-card-subtitle {
+    font-weight: 400;
+    size: 14px;
+    color: var(--gray-text);
+}
+
+.copyright-text {
+    font-weight: 400;
+    font-size: 12px;
+    color: var(--gray-text);
+}
+
+.container {
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
 
 /* Ссылка */
 
@@ -101,7 +146,6 @@ body {
 /* Кнопка*/
 
 .default-btn {
-    display: inline-block;
     padding: 15px 35px;
     font-size: 15px;
     font-weight: 600;
@@ -152,9 +196,11 @@ body {
 /* Меню */
 
 .menu__list {
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    gap: 52px;
+    justify-content: space-between;
+    width: 35vw;
+    max-width: 580px;
 }
 
 /*SSL лого*/
@@ -267,11 +313,133 @@ body {
     color: var(--white);
 }
 
+/* Clients карточка */
 
-.container {
-    max-width: 780px;
-    margin: 0 auto;
-    padding: 40px 15px;
+.clients-card {
+    border: 1px solid var(--clients-card-border-outside);
+    border-radius: 5px;
+    padding: 51px 37px 32px;
+}
+
+.clients-card__paragraph {
+    line-height: 25px;
+    text-align: left;
+    padding-bottom: 33px;
+}
+
+.person-card__img {
+    width: 67px;
+    height: 67px;
+    border: 2px solid var(--base-color);
+    border-radius: 50%;
+}
+
+.clients-card__person-card {
+    padding-top: 28px;
+    border-top: 1px solid var(--clients-card-border-inside);
+}
+
+.clients-card:hover {
+    background-color: var(--base-color);
+    cursor: pointer;
+    transition: background-color var(--transition-duration);
+}
+
+.clients-card:hover .clients-card__paragraph {
+    color: var(--white);
+}
+
+.clients-card:hover .min-card-title {
+    color: var(--white);
+}
+
+.clients-card:hover .min-card-subtitle {
+    color: var(--white);
+}
+
+/* Contacts карточка*/
+
+.contacts-card__min-card-title {
+    padding: 19px 0 30px;
+}
+
+/* Блок Copyright*/
+
+.lionic-copyright {
+    display: inline-flex;
+    align-items: center;
+    gap: 25px;
+}
+
+/*social media*/
+
+.social-media {
+    display: inline-flex;
+    column-gap: 32px;
+}
+
+/* HEADER */
+
+.header {
+    height: 110px;
+    background-color: var(--white);
+    align-content: center;
+    border-bottom: 1px solid var(--base-color-gray);
+}
+
+.header_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__right-side-wrapper {
+    display: inline-flex;
+    align-items: center;
+}
+
+.header__button {
+    margin-left: 52px;
+}
+
+/*Первая секция*/
+
+.hero {
+    height: 550px;
+    background-image: url(../img/main/hero-section/hero-bg.jpg);
+    background-position-x: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.hero__content {
+    max-width: 515px;
+    position: absolute;
+    top: 115px;
+}
+
+.hero__title {
+    font-weight: 300;
+    font-size: 40px;
+    line-height: 52px;
+    color: var(--black);
+}
+
+.hero__paragraph {
+    font-size: 16px;
+    padding: 26px 0 34px;
+    line-height: 25px;
+}
+
+.hero__bottom-side {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 15px;
+}
+
+.hero__button{
+    width: 250px;
 }
 
 @media (max-width: 320px) {
@@ -324,5 +492,75 @@ body {
 .articles-card__paragraph {
     min-width: 160px;
 }
+
+/* Clients карточка */
+
+.clients-card {
+    padding: 20px;
+}
+
+/* Contacts карточка*/
+
+.contacts-card__min-card-title {
+    padding: 10px 0 10px;
+}
+
+}
+
+@media (max-width: 515px) {
+
+.hero__button {
+    width: 100%;
+}
+
+.hero__bottom-side {
+    display: flex;
+}
+
+.hero__content {
+    position: static;
+    padding-top: 30px;
+}
+
+.hero__paragraph {
+    padding: 15px 0;
+}
+    
+}
+
+@media (max-width: 940px) {
+
+.container {
+    padding: 0 15px;
+}
+    
+
+.menu {
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
+
+.menu__list {
+    visibility: hidden;
+    width: 0;
+        height: 0;
+}
+
+.header__button {
+    margin-left: 0px;
+    margin-right: 10px;
+}
+
+.burger-menu {
+    width: 40px;
+    height: 40px;
+    visibility: visible;
+}
+
+.hero {
+    background-image: none;
+}
+
 
 }
