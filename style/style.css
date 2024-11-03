@@ -199,7 +199,11 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: space-between;
-    width: 35vw;
+    
+}
+
+.menu__list_size {
+    width: 60vw;
     max-width: 580px;
 }
 
@@ -384,7 +388,7 @@ body {
     height: 110px;
     background-color: var(--white);
     align-content: center;
-    border-bottom: 1px solid var(--base-color-gray);
+    border-bottom: 1px solid var(--base-color-border);
 }
 
 .header_wrapper {
@@ -440,6 +444,35 @@ body {
 
 .hero__button{
     width: 250px;
+}
+
+/* Services section */
+
+.services {
+    border-bottom: 1px solid var(--base-color-border);
+}
+
+.services__subtitle {
+    text-align: center;
+    padding: 21px 0 54px;
+}
+
+.services__card-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    padding-bottom: 160px;
+    justify-items: center;
+}
+
+.services__title {
+    padding-top: 87px;
+}
+
+/*Articles section*/
+
+.articles__title {
+    text-align: left;
+    padding: 87px 0 42px;
 }
 
 @media (max-width: 320px) {
@@ -505,6 +538,56 @@ body {
     padding: 10px 0 10px;
 }
 
+/*body*/
+
+.header {
+    height: 70px;
+}
+
+.menu {
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
+
+.menu__list {
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
+
+.header__button {
+    margin-left: 0px;
+    margin-right: 10px;
+}
+
+.burger-menu {
+    width: 40px;
+    height: 40px;
+    visibility: visible;
+}
+
+.hero {
+    background-image: none;
+    height: 100%;
+}
+
+.services__title {
+    padding-top: 60px;
+    text-align: left;
+}
+
+.services__subtitle {
+    text-align: left;
+    padding: 15px 0 15px;
+}
+
+.services__card-wrapper {
+    grid-template-rows: repeat(2, 1fr);
+    gap: 15px;
+    padding-bottom: 60px;
+}
+
 }
 
 @media (max-width: 515px) {
@@ -528,13 +611,15 @@ body {
     
 }
 
-@media (max-width: 940px) {
+@media (max-width: 1200px) {
 
 .container {
     padding: 0 15px;
 }
     
+}
 
+/*
 .menu {
     visibility: hidden;
     width: 0;
@@ -544,7 +629,7 @@ body {
 .menu__list {
     visibility: hidden;
     width: 0;
-        height: 0;
+    height: 0;
 }
 
 .header__button {
@@ -562,5 +647,8 @@ body {
     background-image: none;
 }
 
-
+.services__card-wrapper {
+    grid-template-columns: repeat(2, 1fr);
 }
+
+*/
